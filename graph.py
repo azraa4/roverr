@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from std_msgs.msg import UInt8
 
 liste=[]
-def callback(data):
+def plot(data):
 	x  = data.data
 	liste.append(x)
 	plt.plot(liste)
@@ -15,7 +15,7 @@ def callback(data):
 
 if __name__ == '__main__' :
 
-	rospy.init_node('listener' , anonymous=True)
-	rospy.Subscriber('SENSORS', UInt8 , callback)
+	rospy.init_node('graph' , anonymous=True)
+	rospy.Subscriber('SENSORS', UInt8 , plot)
 	plt.show()
 	rospy.spin()
