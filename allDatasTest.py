@@ -41,7 +41,7 @@ def callback(sensor_datas):
     plt.subplot(5,1,5)
     plt.plot(dictionary["karbon"],color = "black")
     plt.ylabel("C")
-    
+    create_excel_file(dictionary)
     plt.draw()
     plt.pause(0.0001)
 
@@ -122,7 +122,7 @@ if __name__=="__main__":
     rospy.init_node("excel_writer")
     rospy.Subscriber("SENSORS",String,callback) # we will call callback here
     plt.show()
-    create_excel_file(dictionary)
+    
     rospy.spin()
      
     
