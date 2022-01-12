@@ -6,7 +6,7 @@
 #include <Adafruit_BMP085.h>
 #define seaLevelPressure_hPa 1013.25
 //define pin
-int sensor_pin = A0;
+//int sensor_pin = A0;
 
 //define variables
 int cikis_degeri ;
@@ -28,9 +28,9 @@ void loop() {
     String temperature =  String(bmp.readTemperature());
     String pressure =  String(bmp.readPressure());
     String altitude =  String(bmp.readAltitude());
-    String nem = String(analogRead(sensor_pin));
-    String karbon = String(analogRead(A3));
-    String alldatas = temperature + "," + pressure + "," + altitude +","+ nem+","+ karbon;
+    //String nem = String(analogRead(sensor_pin));
+    String karbon = String(analogRead(A0));
+    String alldatas = temperature + "," + pressure + "," + altitude +","+ karbon;
      
   
     basinc_msg.data = alldatas.c_str();
